@@ -1,0 +1,18 @@
+<h1> How it works</h1>
+
+<material-dropdown-select
+        [buttonText]="ctrl.value"
+        [ngFormControl]="ctrl"
+        [error]="errorMsg"
+        [options]="options"
+></material-dropdown-select>
+<br>
+Dropdown touched: {{ctrl.touched}}
+
+<h2>What I would expect</h2>
+<h3>Touched is on focus lost blur - not on focus gain</h3>
+<material-input [ngFormControl]="ctrl2"></material-input>
+Input touched: {{ctrl2.touched}}
+<br><br>
+<button (click)="reset()">reset</button>
+
