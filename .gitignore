@@ -10,5 +10,5 @@ build/
 # Directory created by dartdoc
 doc/api/
 
-./idea
+./idea/
 dart-material-bad-focus.impl

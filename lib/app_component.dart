@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:angular/angular.dart';
 import 'package:angular_components/angular_components.dart';
 import 'package:angular_forms/angular_forms.dart';
@@ -27,6 +29,8 @@ class AppComponent {
   Control ctrl = Control('', Validators.required);
   Control ctrl2 = Control('', Validators.required);
 
+  String tempVal="";
+
   List<String> options = ["Ken", "Robert", "Bob"];
 
   reset() {
@@ -40,5 +44,12 @@ class AppComponent {
     } else {
       return null;
     }
+  }
+
+  onFocus(FocusEvent focusEvent){
+      print("Focus event: ${focusEvent}");
+  }
+  onBlur(FocusEvent focusEvent){
+      print("Blur event: ${focusEvent}");
   }
 }

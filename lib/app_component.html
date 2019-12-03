@@ -5,8 +5,10 @@
         [ngFormControl]="ctrl"
         [error]="errorMsg"
         [options]="options"
+        [listAutoFocus]="false"
+        (blur)="onBlur($event)"
+        (focus)="onFocus($event)"
 ></material-dropdown-select>
-<br>
 Dropdown touched: {{ctrl.touched}}
 
 <h2>What I would expect</h2>
@@ -16,3 +18,24 @@ Input touched: {{ctrl2.touched}}
 <br><br>
 <button (click)="reset()">reset</button>
 
+
+<br><br>
+<br><br>
+<h1>Those 2 values should be bound bidirectional as its error state is affecting presentation except value</h1>
+
+<h3>Type somethin in and than remove it with backspace</h3>
+
+
+<material-input [ngFormControl]="ctrl2"></material-input>
+
+<material-input [ngFormControl]="ctrl2"></material-input>
+
+
+
+<h2>I would expect those to act the same as</h2>
+
+<material-input [(ngModel)]="tempVal" [required]="true"></material-input>
+
+<material-input [(ngModel)]="tempVal" [required]="true"></material-input>
+
+<h3>Obviously "touced" state is not shared thus we must first toch both fields</h3>
